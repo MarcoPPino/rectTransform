@@ -8,8 +8,8 @@ void ofApp::setup(){
     cornerSize = 10;
     sideSize = 8;
     
-    startWidth=500;
-    startHeight=500;
+    startWidth = rec.getWidth();
+    startHeight = rec.getHeight();
 }
 
 //--------------------------------------------------------------
@@ -219,15 +219,7 @@ void ofApp::mouseReleased(int x, int y, int button){
     
     
     if(!rec.isStandardized()){
-        cout << "--------------Before-------------" << endl;
-        cout << rec.getPosition() << ", " << rec.getWidth() << ", " <<  rec.getHeight() << endl;
-        cout << rec.getStandardized() << endl;
-        
         rec = rec.getStandardized();
-        
-        cout << "--------------After-------------" << endl;
-        cout << rec.getPosition() << ", " << rec.getWidth() << ", " <<  rec.getHeight() << endl;
-        cout << rec.getStandardized() << endl;
     }
     
 }
