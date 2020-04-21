@@ -8,6 +8,9 @@ Rect can be moved freely. A small tooltip shows the position while the rect is m
 
 <img width="1136" alt="Bildschirmfoto 2020-04-16 um 13 35 36" src="https://user-images.githubusercontent.com/25278349/79451689-36b18d00-7fe7-11ea-87f5-b7f24eebb2c4.png">
 
+issues: 
+- Shift - Aspect ratio keeping doesn't seem to work properly
+
 todo: 
 - LESS MESS
 - Shift - Aspect ratio keeping on all handles & platforms(?)
