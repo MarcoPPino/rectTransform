@@ -2,14 +2,14 @@
 #include <GLUT/GLUT.h>  
 
 //--------------------------------------------------------------
-void ofApp::setup(int w, int h ){
+void ofApp::setup(){
     initSize = 500;
     rec.set(ofGetWidth()/ 2 - initSize / 2, ofGetHeight() / 2 - initSize / 2, initSize, initSize);
     cornerSize = 10;
     sideSize = 8;
     
-    startWidth=0;
-    startHeight=0;
+    startWidth=500;
+    startHeight=500;
 }
 
 //--------------------------------------------------------------
@@ -22,6 +22,7 @@ void ofApp::update(){
     side2.set(rec.getMaxX() - sideSize / 2, rec.getVertAnchor(OF_ALIGN_VERT_CENTER) - sideSize / 2, sideSize, sideSize);
     side3.set(rec.getHorzAnchor(OF_ALIGN_HORZ_CENTER) - sideSize / 2, rec.getMaxY() - sideSize / 2, sideSize, sideSize);
     side4.set(rec.getMinX() - sideSize / 2, rec.getVertAnchor(OF_ALIGN_VERT_CENTER) - sideSize / 2, sideSize, sideSize);
+    
 }
 
 //--------------------------------------------------------------
@@ -42,8 +43,8 @@ void ofApp::draw(){
     if(insideGlobal == true || insideHandle == true){
         string x = ofToString(rec.getX());
         string y = ofToString(rec.getY());
-        string w = ofToString(rec.getWidth());
-        string h = ofToString(rec.getHeight());
+        string w = ofToString(abs(rec.getWidth()));
+        string h = ofToString(abs(rec.getHeight()));
         string str;
         if(insideGlobal == true){
             str ="X: " + x + "px" + "\n" + "Y: " + y + "px";
@@ -215,5 +216,18 @@ void ofApp::mouseReleased(int x, int y, int button){
     insideSide2 = false;
     insideSide3 = false;
     insideSide4 = false;
+    
+    
+    if(!rec.isStandardized()){
+        cout << "--------------Before-------------" << endl;
+        cout << rec.getPosition() << ", " << rec.getWidth() << ", " <<  rec.getHeight() << endl;
+        cout << rec.getStandardized() << endl;
+        
+        rec = rec.getStandardized();
+        
+        cout << "--------------After-------------" << endl;
+        cout << rec.getPosition() << ", " << rec.getWidth() << ", " <<  rec.getHeight() << endl;
+        cout << rec.getStandardized() << endl;
+    }
     
 }
