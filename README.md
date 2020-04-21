@@ -17,8 +17,8 @@ todo:
 - User input for scaling
 - convert to propper class or addon
 
-- Restrain from scaling below zero. ofRectangle can have -width & -height ✓ 
-  -- Done. Solution: It does scale below zero but on mouseReleased the rect is substituded with a standardized version of its own
+- Restrain from scaling below zero. ofRectangle can have -width & -height ✓ <br/>
+  Done. Solution: It does scale below zero but on mouseReleased the rect is substituded with a standardized version of its own
 
 
 
